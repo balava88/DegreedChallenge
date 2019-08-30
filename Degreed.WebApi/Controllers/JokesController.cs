@@ -53,6 +53,7 @@ namespace Degreed.WebApi.Controllers
         [HttpGet]
         [Route("JokesByTerm")]
         [ResponseType(typeof(JokesModels))]
+        [HighlightSearch]
         public IHttpActionResult JokesByTerm(string term)
         {
             return GetHttpResponse(() =>
