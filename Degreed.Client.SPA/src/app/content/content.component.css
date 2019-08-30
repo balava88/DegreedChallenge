@@ -1,0 +1,91 @@
+
+
+.content-container {
+   margin-top: 90px;
+   text-align: center;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+.navbar-container {
+  height: 53px;
+}
+
+.search-container {
+  display: contents;
+}
+
+.search-button{
+  margin-left: 20px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: gainsboro !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  background-color: gainsboro !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+ background-color: gainsboro !important;
+}
+
+::ng-deep.mat-form-field-infix {
+	margin-top: 16px !important;
+}
+
+::ng-deep.cdk-overlay-pane {
+  margin-top: 39px !important;
+}
+
+::ng-deep.mat-form-field-label{
+  color:gainsboro !important;
+}
+
+::ng-deep.search-input {
+  color:gainsboro !important;
+}
+
+::ng-deep.mat-select-placeholder
+ {
+  color:gainsboro !important;
+ }
+
+.accordion-container {
+  margin-left: 24px;
+}
+
+.highlighted {
+  border-left: 5px solid red;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn-primary {
+  background: red !important;
+  border: 1px solid red !important;
+}
+
+p {
+  text-align: initial;
+}
+
+.list-align {
+  text-align: initial;
+}
+
+.items-quantity-container {
+  margin-left: 6px;
+}

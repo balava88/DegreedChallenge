@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-container navbar-fixed-top fixed-top">
+  <div class="col">
+    <div class="row justify-content-md-center">
+      <div class="search-container">
+        <form [formGroup]="formGroup" (ngSubmit)="searchTerm(formGroup.value)">
+          <mat-form-field class="full-width">
+            <input class="search-input" matInput formControlName="searchedValue" placeholder="Search a joke" value="">
+          </mat-form-field>
+          <button mat-raised-button class="search-button" color="warn" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="content-container">
+  <mat-sidenav-container class="sidenav-container">
+    <h2>"{{ joke?.joke }}"</h2>
+    <br />
+    <br />
+    <button mat-raised-button (click)="getNewJoke()" class="search-button" color="warn" type="submit">Get New Random
+      Joke</button>
+    <br />
+    <br />
+    <div class="col" *ngIf="this.hasResults && this.hasSearched">
+      <h5>Jokes found for keyword "{{ searchedTerm }}":</h5>
+      <div class="accordion-container" *ngIf="this.smallJokes.length > 0">
+        <mat-accordion #myaccordion multi="true">
+          <div class="highlighted">
+            <mat-expansion-panel [expanded]="false" (opened)="true" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Small sized jokes <strong class="items-quantity-container"> {{ this.smallJokes.length }} items</strong>
+                </mat-panel-title>
+                <mat-panel-description>
+                  Jokes with less than 10 words
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ol>
+                <li class="list-align" *ngFor="let result of smallJokes" [innerHTML]="result.joke"></li>
+              </ol>
+            </mat-expansion-panel>
+          </div>
+        </mat-accordion>
+      </div>
+      <div class="accordion-container" *ngIf="this.mediumJokes.length > 0">
+        <mat-accordion #myaccordion multi="true">
+          <div class="highlighted">
+            <mat-expansion-panel [expanded]="false" (opened)="true" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Medium sized jokes <strong class="items-quantity-container">{{ this.mediumJokes.length }} items</strong>
+                </mat-panel-title>
+                <mat-panel-description>
+                  Jokes with less than 20 words
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ol>
+                <li class="list-align" *ngFor="let result of mediumJokes" [innerHTML]="result.joke"></li>
+              </ol>
+            </mat-expansion-panel>
+          </div>
+        </mat-accordion>
+      </div>
+      <div class="accordion-container" *ngIf="this.longJokes.length > 0">
+        <mat-accordion #myaccordion multi="true">
+          <div class="highlighted">
+            <mat-expansion-panel [expanded]="false" (opened)="true" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Long sized jokes <strong class="items-quantity-container">{{ this.longJokes.length }} items</strong>
+                </mat-panel-title>
+                <mat-panel-description>
+                  Jokes with more than 30 words
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ol>
+                <li class="list-align" *ngFor="let result of longJokes" [innerHTML]="result.joke"></li>
+              </ol>
+            </mat-expansion-panel>
+          </div>
+        </mat-accordion>
+      </div>
+    </div>
+    <div *ngIf="!this.hasResults && this.hasSearched">
+      <h5>No jokes found for {{ searchedTerm }}!</h5>
+    </div>
+  </mat-sidenav-container>
+</div>

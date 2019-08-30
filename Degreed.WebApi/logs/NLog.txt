@@ -1,0 +1,3 @@
+2019-08-28 12:04:31.4787|Error|System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en Degreed.WebApi.Controllers.JokeController.<RandomJoke>b__2_0() en C:\Users\DELL\Desktop\OneDayChallenge\degreedcodechallenge\Degreed.WebApi\Controllers\JokeController.cs:línea 39
+   en Degreed.WebApi.Core.ApiControllerBase.GetHttpResponse(Func`1 codeToExecute) en C:\Users\DELL\Desktop\OneDayChallenge\degreedcodechallenge\Degreed.WebApi\Core\ApiControllerBase.cs:línea 18
